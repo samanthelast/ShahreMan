@@ -6,11 +6,7 @@ class MyNavigator {
     
     //Navigator.pop(context);
     //Navigator.popAndPushNamed(context, '/screen4');
-    
     Navigator.pushNamed(context, "/home");
-  
-  
-    
   }
 
   static void goToIntro(BuildContext context) {

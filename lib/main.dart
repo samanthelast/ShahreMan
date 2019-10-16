@@ -4,7 +4,6 @@ import 'package:flutkart/pages/intro_screen.dart';
 import 'package:flutkart/pages/splash_screen.dart';
 
 var routes = <String, WidgetBuilder>{
-  
   "/home": (BuildContext context) => HomeScreen(),
   "/intro": (BuildContext context) => IntroScreen(),
 };
@@ -12,6 +11,6 @@ var routes = <String, WidgetBuilder>{
 void main() => runApp(new MaterialApp(
     theme:
         ThemeData(primaryColor: Colors.red, accentColor: Colors.yellowAccent),
-    debugShowCheckedModeBanner: true,
+    debugShowCheckedModeBanner: false,
     home: SplashScreen(),
     routes: routes));

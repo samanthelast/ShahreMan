@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: Drawer(),
+      drawer: Drawer(),
       appBar: AppBar(
         title: Center(
           child:CircleAvatar(
