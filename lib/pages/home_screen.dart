@@ -5,7 +5,6 @@ class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => new _HomeScreenState();
 }
-
 class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   AnimationController animCtrl;
   Animation<double> animation;
@@ -56,54 +55,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         ],
       ),
       drawer: Drawer(),
-      body: new Center(
-          child: new Stack(
-        children: <Widget>[
-          new Center(
-            child: new DragTarget(onWillAccept: (_) {
-              print('red');
-              return true;
-            }, onAccept: (_) {
-              setState(() => showFirst = false);
-              animCtrl.forward();
-              animCtrl2.forward();
-            }, builder: (_, _1, _2) {
-              return new SizedBox.expand(
-                child: new Container(color: Colors.red),
-              );
-            }),
-          ),
-          new Center(
-            child: new DragTarget(onWillAccept: (_) {
-              print('green');
-              return true;
-            }, builder: (_, _1, _2) {
-              return new SizedBox.fromSize(
-                size: new Size(350.0, 350.0),
-                child: new Container(color: Colors.green),
-              );
-            }),
-          ),
-          new Stack(alignment: FractionalOffset.center, children: <Widget>[
-            new Align(
-              alignment: new Alignment(0.0, 0.5 - animation.value * 0.15),
-              child: new CardView(200.0 + animation.value * 60),
-            ),
-            new Align(
-                alignment: new Alignment(0.0, 0.35 - animation2.value * 0.35),
-                child: new InkWell(
-                  onTap: () => Navigator.of(context).push(
-                      new MaterialPageRoute(builder: (_) => new HomeScreen())),
-                  child: new CardView(260.0 + animation2.value * 80),
-                )),
-            new Draggable(
-              feedback: new CardView(340.0),
-              child: showFirst ? new CardView(340.0) : new Container(),
-              childWhenDragging: new Container(),
-            )
-          ]),
-        ],
-      )),
+      body: Text(''),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.amber,
         onPressed: () => {},
