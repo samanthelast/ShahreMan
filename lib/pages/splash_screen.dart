@@ -32,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
         print('connected');
         isConnected = true;
         
-      Timer(Duration(seconds: 5), () => MyNavigator.goToIntro(context));
+      Timer(Duration(seconds: 5), () => MyNavigator.goToHome(context));
       print('lets go');
       }
     } on SocketException catch (_) {

@@ -45,8 +45,20 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(),
       appBar: AppBar(
-        title: Text(Flutkart.name),
+        title: Center(
+          child:CircleAvatar(
+                              backgroundColor: Colors.white,
+                              radius: 50.0,
+                              child: Icon(
+                                Icons.shopping_cart,
+                                color: Colors.greenAccent,
+                                size: 50.0,
+                              ),
+                            ),
+        )
+        ,
         actions: <Widget>[
           Padding(
             child: Icon(Icons.search),
@@ -54,13 +66,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           )
         ],
       ),
-      drawer: Drawer(),
+     // drawer: Drawer(),
       body: Text(''),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.amber,
-        onPressed: () => {},
-        child: Icon(Icons.shopping_cart, color: Colors.white),
-      ),
+      
     );
   }
 }
