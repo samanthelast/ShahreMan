@@ -44,7 +44,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return new MaterialApp(
+      home: Scaffold(
       drawer: Drawer(),
       appBar: AppBar(
         title: Center(
@@ -69,6 +70,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
      // drawer: Drawer(),
       body: Text(''),
       
+    ),
     );
   }
 }
