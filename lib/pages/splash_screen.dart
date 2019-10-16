@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+import 'package:flutkart/pages/home_screen.dart';
 import 'package:flutkart/utils/connection_snackbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutkart/utils/flutkart.dart';
@@ -32,7 +33,20 @@ class _SplashScreenState extends State<SplashScreen> {
         print('connected');
         isConnected = true;
         
-      Timer(Duration(seconds: 5), () => MyNavigator.goToHome(context));
+      //Timer(Duration(seconds: 5), () => MyNavigator.goToHome(context));
+      Future.delayed(
+        Duration(seconds: 5),
+        (){
+          Navigator.pop(context);
+          
+          print('1');
+          //Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=> HomeScreen()), ModalRoute.withName('/home'),);
+          Navigator.push(context, MaterialPageRoute(
+            builder: (context)=> HomeScreen()
+          ));
+          print('2');
+        }
+      );
       print('lets go');
       }
     } on SocketException catch (_) {
@@ -65,12 +79,10 @@ class _SplashScreenState extends State<SplashScreen> {
         key: _scaffoldKey,
         body: Scaffold(
           body: Builder(
-            builder: (context) => Stack(
-              fit: StackFit.expand,
-              children: <Widget>[
+            builder: (context) => 
                 Container(
                   decoration: BoxDecoration(color: Colors.orange),
-                ),
+                child:
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -118,9 +130,9 @@ class _SplashScreenState extends State<SplashScreen> {
                       ),
                     )
                   ],
-                )
-              ],
-            ),
+                ))
+                
+              ,
           ),
         ));
   }
