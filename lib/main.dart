@@ -46,27 +46,20 @@ class _SplashScreenState extends State<SplashScreen> {
         // Timer(Duration(seconds: 5), () => MyNavigator.goToIntro(context));
 
         print('lets go');
-        Future.delayed(
-          Duration(seconds: 5),
-          (){
-          // Navigator.pop(context);
-            // Navigator.push(context, MaterialPageRoute(
-            //   builder: (context)=>HomeScreen()
-            // ));
+        Future.delayed(Duration(seconds: 5), () {
+          Navigator.pop(context);
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => HomeScreen()));
           //  MyNavigator.goToHome(context);
-          Navigator.pushNamed(context, "/home");
-          }
-        );
-      
-      
-      
+        });
       }
     } on SocketException catch (_) {
       print('not connected');
       isConnected = false;
-      WidgetsBinding.instance.addPostFrameCallback((_) =>
-          _scaffoldKey.currentState.showSnackBar(
-              SnackBar(content: Text('Can not connect to the server'))));
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        _scaffoldKey.currentState.showSnackBar(
+            SnackBar(content: Text('Can not connect to the server')));
+      });
       print('cant go');
     }
 
